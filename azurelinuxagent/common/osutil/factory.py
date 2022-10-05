@@ -34,6 +34,7 @@ from .iosxe import IosxeOSUtil
 from .mariner import MarinerOSUtil
 from .nsbsd import NSBSDOSUtil
 from .openbsd import OpenBSDOSUtil
+from .openmandriva import OpenMandrivaOSUtil
 from .openwrt import OpenWRTOSUtil
 from .redhat import RedhatOSUtil, Redhat6xOSUtil, RedhatOSModernUtil
 from .suse import SUSEOSUtil, SUSE11OSUtil
@@ -149,6 +150,9 @@ def _get_osutil(distro_name, distro_code_name, distro_version, distro_full_name)
 
     if distro_name == "nsbsd":
         return NSBSDOSUtil()
+
+    if distro_name == "openmandriva":
+        return OpenMandrivaOSUtil()
 
     if distro_name == "openwrt":
         return OpenWRTOSUtil()

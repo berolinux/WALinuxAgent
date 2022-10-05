@@ -155,6 +155,12 @@ def get_data_files(name, version, fullname):  # pylint: disable=R0912
                           src=["init/mariner/waagent.service"])
         set_logrotate_files(data_files)
         set_udev_files(data_files)
+    elif name == 'openmandriva':
+        set_bin_files(data_files, dest=agent_bin_path)
+        set_conf_files(data_files)
+        set_logrotate_files(data_files)
+        set_udev_files(data_files)
+        set_systemd_files(data_files, dest=systemd_dir_path)
     elif name == 'ubuntu':
         set_conf_files(data_files, src=["config/ubuntu/waagent.conf"])
         set_logrotate_files(data_files)
